@@ -40,16 +40,6 @@ The two halves are separate projects. The frontend never touches the database; i
 | [1. Hello Express](01-hello-express/README.md) | A minimal API | `/api/ping` answering in Docker, checked with Bruno |
 | [2. MongoDB](02-mongodb/README.md) | The database | MongoDB in Docker, seeded with 20 cards; data models |
 | [3. Users and authentication](03-users-and-auth/README.md) | Accounts and login | Register and log in; hashed passwords; protected routes |
-| [4. Cards](04-cards/README.md) | The rest of the API | Create, list, search, update, and delete cards |
-| [5. Automated tests](05-automated-tests/README.md) | A test suite | 27 tests you can run with one command |
-| [6. API documentation](06-api-docs/README.md) | Live docs | Interactive Swagger UI at `/api/docs` |
-| [7. Deploy the backend](07-deploy-backend/README.md) | Production API | The API running on your droplet |
-| [8. Create the React app](08-react-app/README.md) | The frontend shell | Vite + TypeScript + Bootstrap + routing |
-| [9. Login and register](09-login-and-register/README.md) | The first real page | Log in, register, stay logged in, log out |
-| [10. Card list](10-card-list/README.md) | Reading data | Your collection, with search and pages |
-| [11. Manage cards](11-manage-cards/README.md) | Changing data | Add, edit, and delete cards |
-| [12. End-to-end tests](12-end-to-end-tests/README.md) | Browser tests | A Cypress suite that clicks through the app |
-| [13. Deploy everything](13-deploy-everything/README.md) | Production app | The whole app live, redeploying on every push |
 
 Steps 1–7 build the backend; steps 8–13 build the frontend. Do them in order: each step starts where the previous one ended.
 
