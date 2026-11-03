@@ -117,7 +117,7 @@ $ cp .env.example .env
 
 ### `Dockerfile`, `.dockerignore`, `docker-compose.yml`
 
-The **Dockerfile** is the recipe for your image: start from Node 22 on Alpine Linux, copy `package.json`, run `npm install`, copy your code, and run `npm run dev`. `.dockerignore` keeps `node_modules` and secrets out of the image.
+The **Dockerfile** is the recipe for your image: start from Node 26 on Alpine Linux, copy `package.json`, run `npm install`, copy your code, and run `npm run dev`. `.dockerignore` keeps `node_modules` and secrets out of the image.
 
 **`docker-compose.yml`** describes how to run it:
 
@@ -146,7 +146,7 @@ test("responds 200 with a message", function () {
   expect(res.getStatus()).to.equal(200);
   expect(res.getBody().message).to.equal("Hello World");
 });
-
+```
 
 `{{baseURL}}` comes from an **environment**: `environments/Development.yml` sets it to `http://localhost:5000`. `Production.yml` will point at your server in Step 7.
 

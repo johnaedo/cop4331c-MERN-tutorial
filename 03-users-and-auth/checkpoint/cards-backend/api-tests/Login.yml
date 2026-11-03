@@ -10,8 +10,8 @@ http:
     type: json
     data: |-
       {
-        "login": "{{login}}",
-        "password": "{{password}}"
+        "login": "{{newLogin}}",
+        "password": "{{newPassword}}"
       }
   auth: inherit
 
@@ -37,7 +37,7 @@ runtime:
         });
 
         test("returns the user that logged in", function () {
-          expect(body.user.login).to.equal(bru.getEnvVar("login"));
+          expect(body.user.login).to.equal(bru.getVar("newLogin"));
         });
 
         test("never returns the password", function () {
@@ -49,6 +49,6 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+  forwardAuthorizationHeader: true
 
-docs: |-
-  Logs in as the user in the environment and saves {{token}} and {{userId}} for later requests.
+docs: Logs in as the user in the environment and saves {{token}} and {{userId}} for later requests.

@@ -1,5 +1,7 @@
 # Step 0 — Set Up Your Tools
 
+Most of you should have this already done from the LAMP project.  The new element will be Docker as we'll be using it for local development.
+
 **You'll end with:** every tool the course uses, installed and working, and a workspace folder ready for Step 1.
 **Time:** 30–60 minutes, mostly downloads.
 
@@ -49,7 +51,7 @@ $ npm --version
 12.x.x
 ```
 
-Any `v22` (or a newer even-numbered LTS release) is fine.
+Any `v26` (or a newer even-numbered LTS release) is fine.
 
 ## 3. Install Git
 
@@ -108,17 +110,32 @@ Make one folder that will hold both projects:
 $ mkdir -p ~/mern-cards
 ```
 
+Clone this tutorial's repository to your local computer.  You can clone it to any folder.  For our tutorial, we'll just clone it to the home directory:
+
+```bash
+$ cd
+$ git clone https://github.com/johnaedo/cop4331c-MERN-tutorial
+```
+
 Now set two shell variables the tutorials use for copying files. `TUTORIALS` is wherever this `tutorials` folder lives on your computer; adjust the path to match:
 
 ```bash
-$ echo 'export WORKSPACE=~/mern-cards' >> ~/.bashrc
-$ echo 'export TUTORIALS=~/path/to/tutorials' >> ~/.bashrc     # ← change this path
+$ export WORKSPACE=$HOME/mern-cards
+$ export TUTORIALS=$HOME/cop4331c-MERN-tutorial
+```
+If you want these variables to be set every time you start a new command shell, you can add them to your login script.
+
+> [!IMPORTANT]
+> If you're on MacOS, replace `.bashrc` with `.zshrc`
+
+
+```bash
+$ echo 'export WORKSPACE=$HOME/mern-cards' >> ~/.bashrc
+$ echo 'export TUTORIALS=$HOME/cop4331c-MERN-tutorial' >> ~/.bashrc
 $ source ~/.bashrc
 $ ls "$TUTORIALS"
 00-setup  01-hello-express  02-mongodb  ...
 ```
-
-(On macOS with the default zsh shell, use `~/.zshrc` instead of `~/.bashrc`.)
 
 ---
 

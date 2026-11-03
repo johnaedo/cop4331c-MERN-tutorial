@@ -27,7 +27,6 @@ PROJECTS = {"cards-backend", "cards-frontend"}
 # repos: students point these at their own server.
 EXPECTED_DIFFERENCES = {
     "cards-backend/api-tests/environments/Production.yml",
-    "cards-frontend/.env.production",
 }
 
 # Files in the reference repos that are not part of the student project

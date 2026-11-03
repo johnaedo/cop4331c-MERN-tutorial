@@ -22,7 +22,7 @@ runtime:
 
         test("returns the logged-in user", function () {
           expect(body._id).to.equal(bru.getVar("userId"));
-          expect(body.login).to.equal(bru.getEnvVar("login"));
+          expect(body.login).to.equal(bru.getVar("newLogin"));
         });
 
         test("never returns the password", function () {

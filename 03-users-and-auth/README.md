@@ -249,7 +249,7 @@ The collection now has five requests. In Bruno, select the **Development** envir
 |---|---|
 | **Ping** | The API is up |
 | **Register** | A new account is created (201), gets a token, and never shows its password |
-| **Login** | `johnaedo` / `ucf123!` logs in. Its script saves `{{token}}` and `{{userId}}` for the requests after it |
+| **Login** | Logs in as the user **Register** just created. Its script saves `{{token}}` and `{{userId}}` for the requests after it |
 | **Get My Account** | Sends the token and gets the account back (200) |
 | **Missing Token** | The same route *without* a token is refused (401) |
 
@@ -257,9 +257,9 @@ Open **Login** and look at its **Script** tab to see how it saves the token. The
 
 Try breaking things on purpose:
 
-- In **Login**, change the password and send it: **401**.
+- In **Login**, replace `{{newPassword}}` in the body with a wrong password and send it: **401**. Put `{{newPassword}}` back afterwards.
 - Send **Get My Account** with the Auth type set to *No Auth*: **401**.
-- Send **Register**, copy the `token` from its response, and paste it into **Get My Account → Auth** in place of `{{token}}`. The URL still has `johnaedo`'s id, so the answer is **403**. Put `{{token}}` back afterwards.
+- Send **Register** once more on its own, which creates a *second* user. Copy the `token` from its response and paste it into **Get My Account → Auth** in place of `{{token}}`. The URL still has the *first* user's id (saved by Login), so the answer is **403**. Put `{{token}}` back afterwards.
 
 Paste a token from a Login response into [jwt.io](https://jwt.io) to see its payload. Then change one character of the token and send it: **401 Invalid or expired token**.
 
@@ -279,7 +279,7 @@ Check that `.env` did **not** go to GitHub: `git status` should never list it.
 
 - [ ] Running the whole collection: **13/13 tests pass**
 - [ ] In `mongosh`, `db.users.find()` shows every password as a `$2b$...` hash
-- [ ] **Get My Account** without a token returns 401; with the new user's token, 403
+- [ ] **Get My Account** without a token returns 401; with the second user's token, 403
 
 ## Troubleshooting
 

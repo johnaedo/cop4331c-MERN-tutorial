@@ -18,7 +18,7 @@ if (!user) {
     firstName: "John",
     lastName: "Aedo",
     login: "johnaedo",
-    password: "$2b$10$dcjsaXblFddld53QThfQAu9WLK7.I4iek3NSg8ruIzpS28Cqd0AIK",
+    password: "$2b$10$Y4a2.eJUNd8GffvXHlZM1.ozHdtZSDMFU.3dtXdnmGVNyhV/SdiTG",
     email: "",
     role: "user"
   });
